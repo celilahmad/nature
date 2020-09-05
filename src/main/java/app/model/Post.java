@@ -20,14 +20,15 @@ public class Post {
 
     private String description;
 
+    @Column(length = 10000)
     private String content;
 
     private String author;
 
     private String date;
 
-    @OneToMany
-    private List<Image> images;
+    @Column(length = 500)
+    private String image;
 
     @OneToMany
     private List<Category> category;

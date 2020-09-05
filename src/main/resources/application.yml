@@ -3,11 +3,12 @@ server:
 
 
 spring:
-  #jpa:
-   # hibernate:
-    #  ddl-auto: update
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
   datasource:
-    url: jdbc:mysql://localhost:3306/natgeo
+    url: jdbc:mysql://localhost:3306/nature
     username: root
     password: hbstudent
