@@ -50,7 +50,7 @@ public class IndexController {
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("listTotalPages", listTotalPages);
 
-        return "tech-index";
+        return "index";
 
 
     }

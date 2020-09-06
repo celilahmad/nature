@@ -30,8 +30,10 @@ public class Post {
     @Column(length = 500)
     private String image;
 
-    @OneToMany
-    private List<Category> category;
+    private String path;
+
+    @OneToOne
+    private Category category;
 
     @OneToMany
     private List<Comment> comments;
