@@ -203,7 +203,7 @@
                                     </div><!-- end col -->
 
                                     <div class="blog-meta big-meta col-md-8">
-                                        <span class="bg-aqua"><a href="post-category.html" title="">Indoor</a></span>
+                                        <span class="bg-aqua"><a href="post-category.html" th:text="${post.category.name}"></a></span>
                                         <h4><a th:href="@{${post.category.path} + '/' + ${post.path} + '/'}" th:text="${post.title}"></a></h4>
                                         <p th:text="${post.description}"></p>
                                         <small th:text="${post.date}"></small>

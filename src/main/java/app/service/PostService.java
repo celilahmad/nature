@@ -27,4 +27,9 @@ public class PostService {
 
 
     }
+
+    public Post postDetail(String path) {
+        return postRepo.findByPath(path);
+
+    }
 }
