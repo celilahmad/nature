@@ -28,6 +28,15 @@ public class PostService {
 
     }
 
+    public Page<Post> listAllByCategory(int pageNumber, String name){
+        Sort sort = Sort.by("date").descending();
+        Pageable pageable = PageRequest.of(pageNumber - 1, 6, sort);
+        return
+                postRepo.findAllByCategoryName(name, pageable);
+
+
+    }
+
     public Post postDetail(String path) {
         return postRepo.findByPath(path);
 
