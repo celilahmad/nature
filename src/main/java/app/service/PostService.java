@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PostService {
@@ -28,12 +29,30 @@ public class PostService {
 
     }
 
+    public List<Post> relatedPosts(String category){
+        return postRepo
+                .findAllByCategoryName(category)
+                .stream()
+                .limit(6)
+                .collect(Collectors.toList());
+    }
+
     public Page<Post> listAllByCategory(int pageNumber, String name){
         Sort sort = Sort.by("date").descending();
         Pageable pageable = PageRequest.of(pageNumber - 1, 6, sort);
         return
                 postRepo.findAllByCategoryName(name, pageable);
 
+
+    }
+
+    public List<Post> searchResult(String keyword){
+
+        return postRepo
+                .findAll()
+                .stream()
+                .filter(x -> x.getTitle().contains(keyword))
+                .collect(Collectors.toList());
 
     }
 

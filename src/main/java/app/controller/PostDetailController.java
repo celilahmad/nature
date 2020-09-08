@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
+
 @Controller
 public class PostDetailController {
 
@@ -27,7 +29,9 @@ public class PostDetailController {
                             @PathVariable("path") String path,
                             Model model){
         Post post = postService.postDetail(path);
+        List<Post> getRelatedPosts = postService.relatedPosts(category);
         model.addAttribute("post", post);
+        model.addAttribute("relatedPosts", getRelatedPosts);
         return "post-detail";
     }
 }

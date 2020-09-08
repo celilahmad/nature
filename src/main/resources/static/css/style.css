@@ -232,8 +232,8 @@ a {
     display: block;
     position: relative;
     background-color: #ffffff;
-    padding: 1rem 2rem;
-    font-size: 14px;
+    padding: 1.5rem 2.5rem;
+    font-size: 18px;
     border-bottom: 1px dashed #e2e2e2;
 }
 
@@ -1041,6 +1041,11 @@ div.tab button:hover {
     position: absolute;
     text-align: center;
     top: -18px;
+}
+
+.media-object-related {
+    height: 5em;
+    width: 8em;
 }
 
 .custombox {
